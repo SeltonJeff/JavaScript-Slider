@@ -15,6 +15,7 @@ function setImage(){
 function reset(){
 	for(let i = 0; i < sliderImages.length; i++){
 		sliderImages[i].style.display = 'none';
+		sliderImages[i].style.opacity = '0.2';
 	}
 }
 
@@ -29,6 +30,7 @@ function startSlide(){
 function slideLeft(){
 	reset();
 	sliderImages[current - 1].style.display = 'block';
+	setTimeout(function(){sliderImages[current].style.opacity = '1';},60);
 	current--;
 }
 
@@ -36,6 +38,7 @@ function slideLeft(){
 function slideRight(){
 	reset();
 	sliderImages[current + 1].style.display = 'block';
+	setTimeout(function(){sliderImages[current].style.opacity = '1';},60);
 	current++;
 }
 
